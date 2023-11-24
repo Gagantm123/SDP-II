@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen recoginise</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    canvas{
+        position: absolute;
+    }
+    video{
+        border: 2px solid black;
+    }
+</style>
+<body>
+    <video id="videoInput" width="720" height="550" muted controls></video>
+    <script src="./js/face-api.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= name %>'s Profile</title>
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
+    <link rel="stylesheet" href="/CSS/profile.css">
+</head>
+<body>
+    <%- include("./partials/navbar.ejs")%>
+    <h1>Welcome <%= name %></h1>
+    <div class="details-display">
+        <div class="images-container">
+            <img src="<%= profile.images[0] %>" alt="user image" title="image-1">
+        </div>
+        <div class="details">
+            <h1 editable><%= profile.username %></h1>
+            <h1 editable><%= profile.email %></h1>
+        </div>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= name %>'s Profile</title>
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
+    <!-- <link rel="stylesheet" href="/CSS/profile.css"> -->
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.user-details {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.info {
+    text-align: left;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* Add these styles to style the table */
+.attendance-table {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background-color: var(--main-color);
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+</style>
+<body>
+    <%- include("./partials/navbar.ejs")%>
+    <div class="dashboard">
+        <div class="user-details">
+            <h1>Student Dashboard</h1>
+            <div class="user-info">
+                <img src="<%= profile.images[0] %>" alt="User Image">
+                <div class="info">
+                    <p><strong>Username:</strong> <%= profile.username %></p>
+                    <p><strong>Email:</strong> <%= profile.email %></p>
+                    <!-- <p><strong>Password:</strong> ********</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="attendance-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S. No</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% profile.attendance.forEach((item,index)=>{ %>
+                        <tr>
+                            <td><%= index+1 %></td>
+                            <td><% item.date %></td>
+                            <td><%= item.time %></td>
+                            <td><%= item.status %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+        
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

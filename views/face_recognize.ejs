@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognize</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/face.js" defer></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    canvas{
+        position: absolute;
+    }
+    video{
+        border: 2px solid black;
+    }
+
+    form button{
+        background-color: rgb(89, 58, 138);
+        padding: 10px 0;
+        padding: 5px 15px;
+        border: none;
+        border-radius: 2px;
+        color: white;
+        cursor: pointer;
+        display: none;
+    }
+
+</style>
+<body> 
+    <script>
+        let image = <%- JSON.stringify(user) %>
+      </script>
+      
+    <video id="video" width="720" height="550" muted controls></video>
+    <form id="form" action="/attendance/<%= user._id %>/2023/<%= month %>/<%= day %>" method="POST">
+        <button id="btn">Mark Attendance</button>
+    </form>
+</body>
+</html>

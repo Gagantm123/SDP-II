@@ -1,0 +1,18 @@
+<div class="navbar">
+    <div class="nav-logo"><a href="/">smAT</a></div>
+    <div class="nav-links">
+        <% if(user){ %>
+            <% if(role == "Student"){ %>
+                <a href="/user/profile">Profile</a>
+                <% }else{ %>
+                <a href="/teacher/schedule">Schedule</a>
+            <% } %>
+            <form action="/auth/logout" method="POST">
+                <button>logout</button>
+            </form>
+        <% }else{ %>
+            <a href="/auth/login">Login</a>
+            <a href="/auth/signup">Signup</a>
+        <% } %>
+    </div>
+</div>

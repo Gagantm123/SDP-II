@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="/CSS/login.css">
+</head>
+<body>
+    <div class="user-login-form">
+        <form action="/auth/signup/" method="POST" enctype="multipart/form-data">
+            <h1>Create New Account</h1>
+            <div class="field-container username-field">
+                <input type="text" name="username" class="username"/>
+            </div>
+            <div class="field-container email-field">
+                <input type="text" name="email" class="email"/>
+            </div>
+            <div class="field-container password-field">
+                <input type="password" name="password" class="password"/>
+            </div>
+            <div class="field-container profile-field">
+                <input type="file" name="profile" class="profile">
+            </div>
+            <button class="login-btn">Login</button>
+        </form>
+    </div>
+</body>
+</html>

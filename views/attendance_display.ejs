@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
+    <link rel="stylesheet" href="/CSS/attendance.css">
+    <script defer src="/JS/attendance.js"></script>
+</head>
+<body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="qrcode-container" id="qrcode-container">
+        <div class="qrcode-btn">
+            <button class="gen-btn">Generate Button</button>
+        </div>
+    </div>
+    <div class="image-container" id="image-container">
+        <img id="qrcode-image" src=""/>
+    </div>
+</body>
+</html>
